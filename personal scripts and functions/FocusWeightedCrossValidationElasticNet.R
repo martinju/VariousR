@@ -26,11 +26,11 @@ sigma0 = 1
 noSim <- 10^3
 n <- 100
 kFold <- 5
-alpha=1
+alpha=0 # alpha is the alpha parameter in the elastic net (alpha=1 gives Lasso, alpha=0 gives ridge)
 
 # Defining the cross validation function ####
 
-CVElasticNet <- function(data,kFold,focusX,alpha){# alpha is the alpha parameter in the elastic net (alpha=1 gives Lasso, alpha=0 gives ridge)
+CVElasticNet <- function(data,kFold,focusX,alpha){
   n <- dim(data)[1]
   obsPerFold <- n/kFold
   ind <- sample(n)-1
