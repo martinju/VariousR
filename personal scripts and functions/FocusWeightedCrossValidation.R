@@ -20,6 +20,12 @@ beta0 <- c(1,-0.5,0.5,0.1,0)
 p <- length(beta0)-1
 sigma0 = 1
 
+# Defining the simulation experiment #### 
+
+noSim <- 10^2
+n <- 200
+kFold <- 5
+
 # Defining the candidate models ####
 
 helpList <- rep(list(0:1),p)
@@ -81,10 +87,6 @@ CV <- function(data,kFold,focusX){
 
 
 # The acutal simulation ####
-
-noSim <- 10^2
-n <- 400
-kFold <- 5
 
 predMuRegVec <- rep(NA,noSim)
 predMuFocusVec <- rep(NA,noSim)
